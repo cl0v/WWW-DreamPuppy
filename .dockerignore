@@ -1,0 +1,11 @@
+.DS_Store
+.python-version
+**/__pycache__
+Makefile
+main.debug.py
+
+# Should expose only those files and folders
+!main.py
+!src/
+!Dockerfile
+!requirements.txt
