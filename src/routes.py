@@ -1,21 +1,34 @@
-from flask import Flask, send_file, redirect, request
+from flask import Flask, send_file, redirect, request, render_template
 
 app = Flask(__name__)
 
+UNDER_CONSTRUCTION_STR: str = "Site em construção, aguarde as próximas versões (v0.0.2)"
+
 @app.route("/")
 def hello():
-    return "Ainda não há nada aqui! v0.0.1"
+    return UNDER_CONSTRUCTION_STR
 
-@app.errorhandler(404)
-def page_not_found():
-    # Redirects to the app to download
-    print('TESTANDO CARALHOOOOOO')
-    ua = request.headers.get('User-Agent')
-    apple = 'https://apps.apple.com/br/app/dreampuppy-galeria-de-filhotes/id6478811369?l=en-GB'
-    google = 'https://play.google.com/store/apps/details?id=com.dreampuppy.gallery&hl=en_US'
-    print(ua)
-    return redirect(apple)
+# @app.errorhandler(404)
+# def page_not_found():
+#     # Redirects to the app to download
+#     print('TESTANDO CARALHOOOOOO')
+#     ua = request.headers.get('User-Agent')
+#     apple = 'https://apps.apple.com/br/app/dreampuppy-galeria-de-filhotes/id6478811369?l=en-GB'
+#     google = 'https://play.google.com/store/apps/details?id=com.dreampuppy.gallery&hl=en_US'
+#     print(ua)
+#     return redirect(apple)
 
+
+@app.route("/filhotes/<pet_id>")
+def get_puppy_details(pet_id):
+    pet = {'id': pet_id,
+             'gender': 'Macho',
+             'pedigree': 'CBKC',
+             'age' : 60,
+             'breed': 'Shih-Tzu',
+             'price': 3900, 
+             'images': ['https://imagedelivery.net/JI3ns6jFWrGzJIqYSEMvKw/9ecd5602-c643-4b67-ac92-c94fcfbb6400/wwwMainDefault',]}
+    return render_template("puppies.html", pet=pet)
 
 @app.route("/.well-known/apple-app-site-association")
 def apple_deep_linking():
