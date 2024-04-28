@@ -27,7 +27,7 @@ def get_puppy_details(pet_id):
              'age' : 60,
              'breed': 'Shih-Tzu',
              'price': 3900, 
-             'images': ['https://imagedelivery.net/JI3ns6jFWrGzJIqYSEMvKw/9ecd5602-c643-4b67-ac92-c94fcfbb6400/wwwMainDefault',]}
+             'images': ['https://imagedelivery.net/JI3ns6jFWrGzJIqYSEMvKw/3fc80642-2511-4b26-7184-0375690d3100/3w2h',]}
     return render_template("puppies.html", pet=pet)
 
 @app.route("/.well-known/apple-app-site-association")
