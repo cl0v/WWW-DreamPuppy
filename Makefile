@@ -5,7 +5,7 @@ push:
 	docker push vianagallery/frontend:stable
 
 stable:
-	docker buildx build --platform linux/arm64 --push -t vianagallery/frontend:stable .
+	docker buildx build --platform linux/amd64 --push -t vianagallery/frontend .
 
 run:
 	python main.debug.py

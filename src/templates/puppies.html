@@ -6,6 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+    <link rel="icon" type="image/x-icon" href={{ url_for("static", filename="favicon.ico") }}>
     <title>Filhote de {{ pet.breed }}</title>
 
     <!-- Bootstrap core CSS -->
@@ -19,27 +20,31 @@
     
   <!-- -->
     <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand">DreamPuppy</a>
-        </div>
+        <div class="container">
+          
+          <div class="navbar-header">
+            <!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button> -->
+            <img src= {{ url_for("static", filename='svg/logo.svg') }} width="48" height="48">
+            <a class="navbar-brand">iPets</a>
+          </div>
 
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
-          <ul class="nav navbar-nav">
+
+        <!-- <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav"> -->
             <!-- <li><a href="#about">Aplicativo iOS</a></li>
             <li><a href="#about">Aplicativo Android</a></li> -->
 
             <!-- <li><a href="#about">Sobre</a></li> -->
             <!-- <li><a href="#services"></a></li> -->
             <!-- <li><a href="#contact">Contato</a></li> -->
-          </ul>
-        </div>
+          <!-- </ul>
+        </div> -->
+
       </div>
     </nav>
  <!-- -->
@@ -63,13 +68,13 @@
 
         <div class="col-md-4">
           <h3>Descrição</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim.</p>
+          <p>Filhote de {{ pet.breed }} disponível. Vacinas e Vermifugos em dia.</p>
           <h3>Detalhes</h3>
           <ul>
             <li>Gênero: {{ pet.gender }}</li>
             <li>Pedigree: {{ pet.pedigree }}</li>
             <li>Idade: {{ pet.age }} dias</li>
-            <li>Visite o <a src="#">Aplicativo</a> para mais informações</li>
+            <li>Visite o Aplicativo para mais informações <a src="https://apps.apple.com/br/app/dreampuppy-galeria-de-filhotes/id6478811369?l=en-GB">iPhone</a> ou <a src="https://play.google.com/store/apps/details?id=com.dreampuppy.gallery">Android</a></li>
           </ul>
         </div>
 

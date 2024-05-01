@@ -21,13 +21,21 @@ def hello():
 
 @app.route("/filhotes/<pet_id>")
 def get_puppy_details(pet_id):
+    import requests as rq
+    url = 'https://api.dreampuppy.com.br/puppies/' + str(pet_id)
+    res = rq.get(url)
+    petjson = res.json()
+    if petjson['gender'] == 1:
+        gender = 'Macho'
+    else:
+        gender = 'Fêmea'
     pet = {'id': pet_id,
-             'gender': 'Macho',
+             'gender': gender,
              'pedigree': 'CBKC',
              'age' : 60,
-             'breed': 'Shih-Tzu',
-             'price': 3900, 
-             'images': ['https://imagedelivery.net/JI3ns6jFWrGzJIqYSEMvKw/3fc80642-2511-4b26-7184-0375690d3100/3w2h',]}
+             'breed': petjson['breed'],
+             'price': petjson['price'], 
+             'images': petjson['images']}
     return render_template("puppies.html", pet=pet)
 
 @app.route("/.well-known/apple-app-site-association")
@@ -36,6 +44,7 @@ def apple_deep_linking():
 
 
 # https://www.dreampuppy.com.br/suporte
+
 @app.route("/suporte")
 def suport_redirect():
     return redirect('https://wa.me/send?phone=5533997312898')
