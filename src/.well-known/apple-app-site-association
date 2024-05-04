@@ -2,12 +2,10 @@
     "applinks": {
         "apps": [],
         "details": [
-            {
-                "appID": "5NV6KB85G6.com.dreampuppy",
-                "paths": [
-                    "/filhotes"
-                ]
-            }
-        ]
+        {
+          "appID": "5NV6KB85G6.com.dreampuppy",
+          "paths": ["*"]
+        }
+      ]
     }
-}
+  }
