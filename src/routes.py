@@ -42,6 +42,10 @@ def get_puppy_details(pet_id):
 def apple_deep_linking():
     return send_file(path_or_file=".well-known/apple-app-site-association")
 
+@app.route("/.well-known/assetlinks.json")
+def google_deep_linking():
+    return send_file(path_or_file=".well-known/assetlinks.json")
+
 
 # https://www.dreampuppy.com.br/suporte
 

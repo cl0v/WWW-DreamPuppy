@@ -1,0 +1,11 @@
+[
+    {
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "com.dreampuppy.gallery",
+        "sha256_cert_fingerprints":
+          ["14:69:A4:F5:86:C0:66:91:82:BF:63:9D:27:22:98:66:8B:87:8D:7C:CB:83:DA:14:DE:FD:58:43:15:8C:B8:F3"]
+      }
+    }
+  ]
