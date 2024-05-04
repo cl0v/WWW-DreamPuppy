@@ -20,8 +20,9 @@ footer {
 	flex-direction: row;
 	justify-content: start;
 	align-items: center;
-	/* margin: 0; */
+	position: relative;
 }
+
 
 .logo{
 	margin-left: 10px;
@@ -29,4 +30,10 @@ footer {
 
 .container-nav{
 	margin: 0;
+}
+
+.nav-toggle-custom{
+	position: absolute;
+  	bottom: 0;
+  	right: 0;
 }
