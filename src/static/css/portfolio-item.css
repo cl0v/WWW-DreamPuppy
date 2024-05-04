@@ -14,3 +14,19 @@ footer {
 	float: left;
     clear: none;
 }
+
+.navbar-header{
+	display: flex;
+	flex-direction: row;
+	justify-content: start;
+	align-items: center;
+	/* margin: 0; */
+}
+
+.logo{
+	margin-left: 10px;
+}
+
+.container-nav{
+	margin: 0;
+}
