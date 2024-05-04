@@ -21,6 +21,9 @@ def hello():
 
 @app.route("/filhotes/<pet_id>")
 def get_puppy_details(pet_id):
+    # Template usado:
+    # https://learning-zone.github.io/website-templates/portfolio-item/
+    # https://github.com/learning-zone/website-templates/tree/master/portfolio-item
     import requests as rq
     url = 'https://api.dreampuppy.com.br/puppies/' + str(pet_id)
     res = rq.get(url)
