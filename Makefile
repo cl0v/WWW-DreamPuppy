@@ -12,3 +12,6 @@ run:
 
 docker-run: 
 	docker run -p 80:8000 frontend:develop
+
+rollout:
+	kubectl rollout restart deployments/www -n frontend

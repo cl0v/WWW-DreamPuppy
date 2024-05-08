@@ -21,6 +21,7 @@ def hello():
 
 @app.route("/filhotes/<pet_id>")
 def get_puppy_details(pet_id):
+    # return redirect('ipets://www.dreampuppy.com.br/filhotes/'+str(pet_id))
     # Template usado:
     # https://learning-zone.github.io/website-templates/portfolio-item/
     # https://github.com/learning-zone/website-templates/tree/master/portfolio-item
